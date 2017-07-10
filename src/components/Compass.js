@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 
 const StylishCompass = styled.div`
-  padding: 12px;
   width: 121px;
   position: fixed;
 `

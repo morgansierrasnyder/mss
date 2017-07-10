@@ -5,12 +5,6 @@ import { default as Compass } from './components/Compass'
 import { default as NorthStar } from './components/NorthStar'
 import { Grid, Col, Row } from 'react-flexbox-grid'
 
-const MyName = styled.div`
-  height: 115px;
-  padding: 12px;
-  text-align: right;
-  color: #222;
-`
 const MyImage = styled.img`
   width: 500px;
 `

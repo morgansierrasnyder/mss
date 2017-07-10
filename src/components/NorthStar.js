@@ -10,17 +10,27 @@ const Mss = styled.div`
   position: fixed;
   text-align: center;
   transition: top 0.2s ease-in-out;
-  background-color: yellow;
+  background-color: darkgoldenrod;
 
   .obscure {
     top: -66px;
   }
 `
+const MorganSierraSnyder = styled.div`
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  position: absolute;
+  top: 44px;
+  left: 121px;
+`
 
 class NorthStar extends React.Component {
   render() {
     return (
-      <Mss className={this.props.className}>Morgan Sierra Snyder</Mss>
+      <Mss className={this.props.className}>
+        <MorganSierraSnyder>Morgan Sierra Snyder</MorganSierraSnyder>
+      </Mss>
     )
   }
 }
