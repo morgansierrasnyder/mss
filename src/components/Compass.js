@@ -4,16 +4,18 @@ import styled from 'styled-components'
 const StylishCompass = styled.div`
   width: 121px;
   position: fixed;
+  margin: 12px 0px;
 `
 const CompassDirection = styled.div`
   padding: 4px;
-  color: goldenrod;
-  font-size: small;
+  color: black;
+  cursor: pointer;
+  font-size: 13px;
   text-align: right;
   transition: transform 0.3s, color 0.5s;
 
   &:hover {
-    color: darkgoldenrod;
+    color: indianred;
     transform: translateX(1em);
   }
 `
