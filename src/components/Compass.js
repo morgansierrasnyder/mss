@@ -1,22 +1,45 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
+import theme from '../theme'
+
+const { turmeric, robin, lox } = theme.colors
+
 const StylishCompass = styled.div`
-  width: 121px;
+  width: 150px;
   position: fixed;
-  margin: 12px 0px;
+  top: 30px;
+  left: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
 `
-const CompassDirection = styled.div`
-  padding: 4px;
-  color: black;
+const Direction = styled.div`
+  padding: 6px;
+  margin: 4px;
+  background-color: ${lox};
+  width: min-content;
+  color: white;
+  text-transform: uppercase;
+  white-space: nowrap;
+  font-weight: bold;
   cursor: pointer;
-  font-size: 13px;
-  text-align: right;
-  transition: transform 0.3s, color 0.5s;
+  font-size: 15px;
+  transition: transform 0.3s, background-color 0.45s, font-style 0.3s, padding 0.3s;
 
   &:hover {
-    color: indianred;
-    transform: translateX(1em);
+    background-color: ${turmeric};
+    transform: translateX(0.75em);
+    padding-right: 12px;
+    padding-left: 0px;
+  }
+  &:active {
+    background-color: ${robin};
+    transform: translateX(0.5em);
+    padding-right: 6px;
+    padding-left: 6px;
   }
 `
 
@@ -24,17 +47,15 @@ class Compass extends React.Component {
   render() {
     return (
       <StylishCompass>
-        <CompassDirection>who am I?</CompassDirection>
-        <CompassDirection>ventured</CompassDirection>
-        <CompassDirection>coded</CompassDirection>
-        <CompassDirection>drawn</CompassDirection>
-        <CompassDirection>painted</CompassDirection>
-        <CompassDirection>designed</CompassDirection>
-        <CompassDirection>rendered</CompassDirection>
-        <CompassDirection>written</CompassDirection>
-        <CompassDirection>built</CompassDirection>
+        <Link to="/bio"><Direction>who am I?</Direction></Link>
+        <Link to="/art"><Direction>illustrated</Direction></Link>
+        <Link to="/craft"><Direction>crafted</Direction></Link>
+        <Link to="/code"><Direction>coded</Direction></Link>
+        <Link to="/startup"><Direction>ventured</Direction></Link>
+        <Link to="/cg"><Direction>rendered</Direction></Link>
+        <Link to="/blog"><Direction>wrote</Direction></Link>
         <div>&nbsp;</div>
-        <CompassDirection>who are You?</CompassDirection>
+        <Link to="/contact"><Direction>who are You?</Direction></Link>
       </StylishCompass>
     )
   }
