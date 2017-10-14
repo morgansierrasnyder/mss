@@ -1,9 +1,4 @@
-/*
- * The palette of Frank Stella
- */
-
- "stella" : {
-
+{
   "unknown": {
     "lavender": "#7A83A0",
     "magenta": "#C72B64",

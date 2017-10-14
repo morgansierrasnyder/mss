@@ -4,15 +4,17 @@ const Base = glamorous.div({
   '-webkit-font-smoothing': 'antialiased'
 })
 const Display = glamorous(Base)({
-  'font-family': '"Permanent-Marker", cursive',
-  'font-size': '21px',
-  'line-height': '24px'
+  fontFamily: '"Permanent Marker", cursive',
+  fontSize: '18px',
+  lineHeight: '24px',
+  color: '#3B3C36'
 })
 
 const Body = glamorous(Base)({
-  'font-family': '"Josefin Sans", sans-serif',
-  'font-size': '18px',
-  'line-height': '21px'
+  fontFamily: '"Josefin Sans", sans-serif',
+  fontWeight: 100,
+  fontSize: '18px',
+  lineHeight: '21px'
 })
 
 export { Display, Body }
