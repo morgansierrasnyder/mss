@@ -1,7 +1,7 @@
 import glamorous from 'glamorous'
 
 const Base = glamorous.div({
-  '-webkit-font-smoothing': 'antialiased'
+  WebkitFontSmoothing: 'antialiased'
 })
 const Display = glamorous(Base)({
   fontFamily: '"Permanent Marker", cursive',

@@ -1,28 +1,52 @@
 import * as React from 'react'
 import glamorous from 'glamorous'
 
-import Header from './components/Header'
-import { Display, Body } from './components/style/typography'
-
-const Content = glamorous.div({
-  position: 'absolute',
-  top: 100,
-  bottom: 0,
-  left: 0,
-  width: '100%',
-  display: 'flex',
-  backgroundColor: '#F5F5F5',
-})
+import {
+  Intro,
+  Nav,
+  Content
+} from './components'
 
 class App extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = { intro: true }
+  }
+
+  handleScroll = (e: any) => {
+    const top = window.scrollY
+    const threshold = window.innerHeight
+
+    if (this.state.intro && top > threshold) {
+      console.log('setting intro to FALSE')
+      this.setState({ intro: false })
+    } else if (!this.state.intro && top < threshold) {
+      console.log('setting intro to TRUE')
+      this.setState({ intro: true })
+    }
+  }
+
+  componentDidMount = () => {
+    window.addEventListener('scroll', this.handleScroll);
+  }
+
+  componentWillUnmount = () => {
+      window.removeEventListener('scroll', this.handleScroll);
+  }
+
   render() {
+    const sticky = !this.state.intro
+
+    console.log(sticky)
+
     return (
       <div>
-        <Header />
+        <Intro />
+        <Nav sticky={sticky} />
         <Content />
       </div>
     );
   }
 }
 
-export default App;
+export default App
